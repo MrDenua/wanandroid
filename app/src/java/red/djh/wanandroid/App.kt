@@ -1,6 +1,7 @@
 package red.djh.wanandroid
 
 import android.app.Application
+import red.djh.wanandroid.network.RetrofitManager
 
 /**
  * author : dengzi
@@ -8,4 +9,11 @@ import android.app.Application
  * time   : 2019/07/29 11:52
  * desc   :
  */
-class App: Application()
+class App: Application(){
+
+    override fun onCreate() {
+        super.onCreate()
+
+        RetrofitManager.init(this, "https://www.wanandroid.com")
+    }
+}
