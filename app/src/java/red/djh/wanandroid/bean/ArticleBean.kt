@@ -9,9 +9,9 @@ package red.djh.wanandroid.bean
  * @date 2019/8/1
  */
 data class ArticleBean(
-    var author: String,
-    var superChapterName: String,
-    var title: String,
-    var link: String,
-    var niceDate: String
+    val author: String,
+    val superChapterName: String,
+    val title: String,
+    val link: String,
+    val niceDate: String
 )

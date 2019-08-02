@@ -9,7 +9,11 @@ package red.djh.wanandroid.bean
  * @date 2019/8/1
  */
 data class PageBean<T>(
-    var datas: List<T>,
-    var pageCount: Int,
-    var total: Int
+    val datas: List<T>,
+    val pageCount: Int,
+    val total: Int,
+    val curPage: Int,
+    val size: Int,
+    val over: Boolean,
+    val offset: Int
 )

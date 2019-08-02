@@ -12,7 +12,7 @@ class LogUtils {
     companion object{
 
         fun i(tag:String, log:String){
-            println(tag + log)
+            println("$tag $log")
         }
     }
 }

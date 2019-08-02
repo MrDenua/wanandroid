@@ -2,6 +2,7 @@ package red.djh.wanandroid.network
 
 import okhttp3.Interceptor
 import okhttp3.Response
+import red.djh.wanandroid.network.LogInterceptor.In.TAG
 import red.djh.wanandroid.utils.LogUtils
 
 /**
@@ -20,7 +21,7 @@ class LogInterceptor : Interceptor {
         LogUtils.i(TAG, "${request.method()} ${request.url()}")
         return chain.proceed(request)
     }
-    companion object{
-        val TAG = "LogInterceptor"
+    object In{
+        const val TAG = "LogInterceptor"
     }
 }

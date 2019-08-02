@@ -9,7 +9,7 @@ package red.djh.wanandroid.bean
  * @date 2019/8/1
  */
 data class Response<T>(
-    var data: T,
-    var errorCode: Int,
-    var errorMsg: String
+    val data: T,
+    val errorCode: Int,
+    val errorMsg: String
 )

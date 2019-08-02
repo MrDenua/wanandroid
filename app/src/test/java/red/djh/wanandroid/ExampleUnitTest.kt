@@ -23,7 +23,7 @@ class ExampleUnitTest {
     fun text(){
 
         RetrofitManager.init(null, "https://www.wanandroid.com")
-        SiteApi.API.getArticles(1)
+        SiteApi.Instance.API.getArticles(1)
             .subscribe {
                 print(it)
             }

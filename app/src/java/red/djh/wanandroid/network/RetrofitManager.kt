@@ -2,6 +2,7 @@ package red.djh.wanandroid.network
 
 import android.content.Context
 import okhttp3.OkHttpClient
+import red.djh.wanandroid.api.SiteApi
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -32,15 +33,17 @@ class RetrofitManager private constructor(context: Context?, baseUrl: String) {
         retrofitBuilder.baseUrl(baseUrl)
             .client(builder.build())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-            .addConverterFactory(GsonConverterFactory.create())
             .addConverterFactory(ScalarsConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create())
 
         mRetrofit = retrofitBuilder.build()
+
     }
 
     companion object {
 
         private lateinit var sInstance: RetrofitManager
+
 
         fun init(context: Context?, baseUrl: String) {
             sInstance = RetrofitManager(context, baseUrl)
