@@ -24,11 +24,11 @@ class SiteApiTest {
 
     @Test
     fun loginTest(){
-        UserApi.Instance.API.login(mapOf("username" to "denua123", "password" to "denua1"))
+        UserApi.Instance.API.login(LoginDto("denua123","denua1"))
             .subscribe({
                 print(it)
             }, {
-                print(it)
+                it.printStackTrace()
             })
     }
 
@@ -38,7 +38,7 @@ class SiteApiTest {
             .subscribe({
                 print(it)
             }, {
-                print(it)
+                it.printStackTrace()
             })
     }
 }

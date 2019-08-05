@@ -11,6 +11,9 @@ import java.lang.Exception
  * @date 2019/8/1
  */
 class LogManager(logger: Logger, logLevel: Int) : Logger {
+    override fun e(tag: String, e: Throwable) {
+
+    }
 
     private val mLogger: Logger = logger
     private var mLogLevel: Int = logLevel
@@ -31,7 +34,4 @@ class LogManager(logger: Logger, logLevel: Int) : Logger {
         mLogger.i(tag, log)
     }
 
-    override fun e(tag: String, e: Exception) {
-        mLogger.e(tag, e)
-    }
 }
