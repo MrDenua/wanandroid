@@ -2,11 +2,12 @@ package red.djh.wanandroid.api
 
 import io.reactivex.Observable
 import red.djh.wanandroid.bean.Response
-import red.djh.wanandroid.bean.user.LoginBean
-import red.djh.wanandroid.dto.LoginDto
-import red.djh.wanandroid.dto.RegisterDto
+import red.djh.wanandroid.bean.user.UserBean
 import red.djh.wanandroid.network.RetrofitManager
-import retrofit2.http.*
+import retrofit2.http.Field
+import retrofit2.http.FormUrlEncoded
+import retrofit2.http.GET
+import retrofit2.http.POST
 
 /**
  * author : dengzi
@@ -21,14 +22,20 @@ interface UserApi {
         val API = RetrofitManager.create(UserApi::class.java)
     }
 
-    @POST("user/login")
-    fun login(@Body loginDto: LoginDto): Observable<Response<LoginBean>>
-
     @POST("user/register")
-    fun register(@Body registerDto: RegisterDto): Observable<Response<String>>
+    @FormUrlEncoded
+    fun register(
+        @Field("username") username: String,
+        @Field("password") password: String,
+        @Field("repassword") repassword: String
+    ): Observable<Response<UserBean>>
 
     @POST("user/login")
-    fun login(@Body map:Map<String,String>): Observable<Response<LoginBean>>
+    @FormUrlEncoded
+    fun login(
+        @Field("username") username: String,
+        @Field("password") password: String
+    ): Observable<Response<UserBean>>
 
     @GET("ser/logout/json")
     fun logout(): Observable<Response<String>>

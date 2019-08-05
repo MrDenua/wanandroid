@@ -1,11 +1,7 @@
 package red.djh.wanandroid.api
 
 import org.junit.Before
-
-import org.junit.Assert.*
 import org.junit.Test
-import red.djh.wanandroid.dto.LoginDto
-import red.djh.wanandroid.dto.RegisterDto
 import red.djh.wanandroid.network.RetrofitManager
 
 /**
@@ -23,8 +19,8 @@ class SiteApiTest {
     }
 
     @Test
-    fun loginTest(){
-        UserApi.Instance.API.login(LoginDto("denua123","denua1"))
+    fun loginTest() {
+        UserApi.Instance.API.login("dengzi2", "d123456.")
             .subscribe({
                 print(it)
             }, {
@@ -33,8 +29,8 @@ class SiteApiTest {
     }
 
     @Test
-    fun registerTest(){
-        UserApi.Instance.API.register(RegisterDto("dengzi","d123456.","d123456."))
+    fun registerTest() {
+        UserApi.Instance.API.register("dengzi2", "d123456.", "d123456.")
             .subscribe({
                 print(it)
             }, {

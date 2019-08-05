@@ -49,8 +49,8 @@ class RetrofitManager private constructor(context: Context?, baseUrl: String) : 
         retrofitBuilder.baseUrl(baseUrl)
             .client(builder.build())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-            .addConverterFactory(GsonConverterFactory.create())
             .addConverterFactory(ScalarsConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create())
 
         mRetrofit = retrofitBuilder.build()
 
