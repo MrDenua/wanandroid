@@ -22,6 +22,7 @@ class SiteApiTest {
     fun loginTest() {
         UserApi.Instance.API.login("dengzi2", "d123456.")
             .subscribe({
+
                 print(it)
             }, {
                 it.printStackTrace()

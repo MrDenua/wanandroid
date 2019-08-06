@@ -7,7 +7,7 @@ package red.djh.wanandroid.bean.site
  * desc   :
  */
 data class ProjectTypeBean(
-    val chile:List<String>,
+    val children:List<String>,
     val courseId:Int,
     val id:Int,
     val name:String,
