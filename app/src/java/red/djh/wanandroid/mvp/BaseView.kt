@@ -8,7 +8,7 @@ package red.djh.wanandroid.mvp
  * @email denua@foxmail.com
  * @date 2019/8/12
  */
-interface BaseView {
+interface BaseView<P : BasePresenter> {
     fun showLoading()
     fun hideLoading()
     fun showMessage(msg: String)

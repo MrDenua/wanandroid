@@ -1,5 +1,7 @@
 package red.djh.wanandroid.contract
 
+import red.djh.wanandroid.mvp.BasePresenter
+
 /**
  * red.djh.wanandroid.contract
  *
@@ -10,13 +12,13 @@ package red.djh.wanandroid.contract
  */
 interface LoginContract {
 
-    interface LoginView {
+    interface LoginView<T:BasePresenter> {
         fun getUsername(): String
         fun getPassword(): String
         fun clearInput()
     }
 
-    interface LoginPresenter {
+    interface LoginPresenter :BasePresenter{
         fun login()
     }
 }

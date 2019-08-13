@@ -1,10 +1,10 @@
 package red.djh.wanandroid.view
 
-import android.app.Activity
-import android.os.Bundle
+import android.view.View
 import android.widget.EditText
 import red.djh.wanandroid.R
 import red.djh.wanandroid.base.BaseActivity
+import red.djh.wanandroid.base.BaseMvpActivity
 import red.djh.wanandroid.contract.LoginContract
 
 /**
@@ -15,17 +15,24 @@ import red.djh.wanandroid.contract.LoginContract
  * @email denua@foxmail.com
  * @date 2019/8/12
  */
-class LoginActivity: BaseActivity(), LoginContract.LoginView {
+class LoginActivity : BaseMvpActivity<LoginContract.LoginPresenter>(),
+    LoginContract.LoginView<LoginContract.LoginPresenter> {
 
-    lateinit var mEtUsername:EditText
-    lateinit var mEtPassword:EditText
+    override fun initPresenter(): LoginContract.LoginPresenter {
+    }
+
+    lateinit var mEtUsername: EditText
+    lateinit var mEtPassword: EditText
+
 
     override fun getLayout(): Int {
         return R.layout.activity_login
     }
 
     override fun initView() {
-
+        mEtUsername = findViewById(R.id.et_username)
+        mEtPassword = findViewById(R.id.et_password)
+        findViewById<View>(R.id.bt_submit).setOnClickListener {  }
     }
 
     override fun initData() {
