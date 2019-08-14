@@ -6,6 +6,7 @@ import red.djh.wanandroid.R
 import red.djh.wanandroid.base.BaseActivity
 import red.djh.wanandroid.base.BaseMvpActivity
 import red.djh.wanandroid.contract.LoginContract
+import red.djh.wanandroid.presenter.LoginPresenter
 
 /**
  * red.djh.wanandroid.view
@@ -15,10 +16,12 @@ import red.djh.wanandroid.contract.LoginContract
  * @email denua@foxmail.com
  * @date 2019/8/12
  */
-class LoginActivity : BaseMvpActivity<LoginContract.LoginPresenter>(),
-    LoginContract.LoginView<LoginContract.LoginPresenter> {
+class LoginActivity
+    : BaseMvpActivity<LoginContract.LoginPresenter>(),
+    LoginContract.LoginView {
 
     override fun initPresenter(): LoginContract.LoginPresenter {
+        return LoginPresenter()
     }
 
     lateinit var mEtUsername: EditText

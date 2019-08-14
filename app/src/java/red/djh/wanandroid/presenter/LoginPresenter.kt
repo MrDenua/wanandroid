@@ -1,5 +1,7 @@
 package red.djh.wanandroid.presenter
 
+import red.djh.wanandroid.contract.LoginContract
+
 /**
  * red.djh.wanandroid.presenter
  *
@@ -8,5 +10,16 @@ package red.djh.wanandroid.presenter
  * @email denua@foxmail.com
  * @date 2019/8/13
  */
-class LoginPresenter {
+class LoginPresenter : LoginContract.LoginPresenter {
+
+    override fun register() {
+
+    }
+
+    override fun forgetPassword() {
+    }
+
+    override fun login() {
+
+    }
 }
