@@ -13,13 +13,13 @@ import red.djh.wanandroid.mvp.BaseView
  */
 interface LoginContract {
 
-    interface LoginView:BaseView<LoginPresenter>{
+    interface ILoginView : BaseView {
         fun getUsername(): String
         fun getPassword(): String
         fun clearInput()
     }
 
-    interface LoginPresenter :BasePresenter{
+    interface ILoginPresenter : BasePresenter {
         fun login()
         fun forgetPassword()
         fun register()

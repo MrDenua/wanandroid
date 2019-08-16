@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit
  * @email denua@foxmail.com
  * @date 2019/7/31
  */
-class RetrofitManager private constructor(context: Context?, baseUrl: String) : NetworkLogger {
+class RetrofitManager private constructor(baseUrl: String) : NetworkLogger {
 
     override var level: Int
         get() = Logger.ALL
@@ -62,7 +62,7 @@ class RetrofitManager private constructor(context: Context?, baseUrl: String) : 
 
 
         fun init(context: Context?, baseUrl: String) {
-            sInstance = RetrofitManager(context, baseUrl)
+            sInstance = RetrofitManager(baseUrl)
         }
 
         fun <T> create(clazz: Class<T>): T = sInstance.mRetrofit.create(clazz)

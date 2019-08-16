@@ -44,11 +44,10 @@ class LogInterceptor(private val mLogger: NetworkLogger) : Interceptor {
         if (requestBody is FormBody) {
             val stringBuilder = StringBuilder()
             stringBuilder.append("{\n")
-            val formBody = requestBody as FormBody
-            val size = formBody.size()
+            val size = requestBody.size()
             for (i in 0 until size) {
                 stringBuilder.append("\t")
-                    .append(formBody.name(i)).append(": ").append(formBody.value(i)).append(",")
+                    .append(requestBody.name(i)).append(": ").append(requestBody.value(i)).append(",")
                     .append("\n")
             }
             stringBuilder.append("}")
@@ -86,7 +85,7 @@ class LogInterceptor(private val mLogger: NetworkLogger) : Interceptor {
 
     companion object {
 
-        private val TAG = "LogInterceptor"
+        private const val TAG = "LogInterceptor"
         private val TYPE_JSON = MediaType.get("application/json; charset=UTF-8")
     }
 }

@@ -13,7 +13,7 @@ import red.djh.wanandroid.mvp.BaseView
  * @email denua@foxmail.com
  * @date 2019/8/13
  */
-abstract class BaseMvpActivity<P:BasePresenter>: BaseActivity(), BaseView<P> {
+abstract class BaseMvpActivity<P : BasePresenter> : BaseActivity(), BaseView {
 
     lateinit var mPresenter: P
 
@@ -23,6 +23,7 @@ abstract class BaseMvpActivity<P:BasePresenter>: BaseActivity(), BaseView<P> {
 
     abstract fun initData()
 
+    abstract fun initPresenter(): P
 
     override fun showLoading() {
     }
