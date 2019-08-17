@@ -44,6 +44,7 @@ class RetrofitManager private constructor(baseUrl: String) : NetworkLogger {
             .readTimeout(20, TimeUnit.SECONDS)
             .addInterceptor(LogInterceptor(this))
             .connectTimeout(20, TimeUnit.SECONDS)
+            .cookieJar(CookieManager())
 
         val retrofitBuilder = Retrofit.Builder()
         retrofitBuilder.baseUrl(baseUrl)
