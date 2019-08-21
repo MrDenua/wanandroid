@@ -8,4 +8,5 @@ package red.djh.wanandroid.mvp
  * @email denua@foxmail.com
  * @date 2019/8/12
  */
-interface BasePresenter
+interface IBaseModel {
+}

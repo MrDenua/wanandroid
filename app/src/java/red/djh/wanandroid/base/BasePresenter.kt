@@ -1,6 +1,6 @@
 package red.djh.wanandroid.base
 
-import red.djh.wanandroid.mvp.BasePresenter
+import red.djh.wanandroid.mvp.IBasePresenter
 
 /**
  * <pre>
@@ -10,7 +10,7 @@ import red.djh.wanandroid.mvp.BasePresenter
  * desc   :
  * </pre>
  */
-abstract class BasePresenter<V>(view: V) : BasePresenter {
+abstract class BasePresenter<V>(view: V) : IBasePresenter {
 
     private val mView:V = view
 

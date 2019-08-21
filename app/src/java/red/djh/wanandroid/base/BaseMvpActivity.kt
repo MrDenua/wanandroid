@@ -2,8 +2,8 @@ package red.djh.wanandroid.base
 
 import android.os.Bundle
 import android.widget.Toast
-import red.djh.wanandroid.mvp.BasePresenter
-import red.djh.wanandroid.mvp.BaseView
+import red.djh.wanandroid.mvp.IBasePresenter
+import red.djh.wanandroid.mvp.IBaseView
 
 /**
  * red.djh.wanandroid.base
@@ -13,7 +13,7 @@ import red.djh.wanandroid.mvp.BaseView
  * @email denua@foxmail.com
  * @date 2019/8/13
  */
-abstract class BaseMvpActivity<P : BasePresenter> : BaseActivity(), BaseView {
+abstract class BaseMvpActivity<P : IBasePresenter> : BaseActivity(), IBaseView {
 
     lateinit var mPresenter: P
 

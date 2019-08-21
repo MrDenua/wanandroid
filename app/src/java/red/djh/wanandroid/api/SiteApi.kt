@@ -27,6 +27,10 @@ interface SiteApi {
         val API = RetrofitManager.create(SiteApi::class.java)
     }
 
+    companion object{
+        val API = RetrofitManager.create(SiteApi::class.java)
+    }
+
     @GET("friend/json")
     fun getSiteList(): Observable<Response<List<SiteBean>>>
 

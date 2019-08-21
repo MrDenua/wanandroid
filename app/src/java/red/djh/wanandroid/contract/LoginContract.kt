@@ -1,7 +1,10 @@
 package red.djh.wanandroid.contract
 
-import red.djh.wanandroid.mvp.BasePresenter
-import red.djh.wanandroid.mvp.BaseView
+import io.reactivex.Observable
+import red.djh.wanandroid.bean.user.UserBean
+import red.djh.wanandroid.mvp.IBaseModel
+import red.djh.wanandroid.mvp.IBasePresenter
+import red.djh.wanandroid.mvp.IBaseView
 
 /**
  * red.djh.wanandroid.contract
@@ -13,15 +16,21 @@ import red.djh.wanandroid.mvp.BaseView
  */
 interface LoginContract {
 
-    interface ILoginView : BaseView {
+    interface View : IBaseView {
         fun getUsername(): String
         fun getPassword(): String
         fun clearInput()
+        fun gotoMain()
     }
 
-    interface ILoginPresenter : BasePresenter {
+    interface Presenter : IBasePresenter {
         fun login()
         fun forgetPassword()
         fun register()
+    }
+
+    interface Model : IBaseModel {
+        fun login(username: String, password: String): Observable<UserBean>
+        fun forgetPassword(username: String): Observable<UserBean>
     }
 }

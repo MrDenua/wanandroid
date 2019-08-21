@@ -4,10 +4,11 @@ import android.content.Context
 import android.content.Intent
 import android.view.View
 import android.widget.EditText
+import red.djh.wanandroid.MainActivity
 import red.djh.wanandroid.R
 import red.djh.wanandroid.base.BaseMvpActivity
 import red.djh.wanandroid.contract.LoginContract
-import red.djh.wanandroid.presenter.LoginPresenter
+import red.djh.wanandroid.presenter.LoginPresenterPresenter
 
 /**
  * red.djh.wanandroid.view
@@ -18,8 +19,12 @@ import red.djh.wanandroid.presenter.LoginPresenter
  * @date 2019/8/12
  */
 class LoginActivity
-    : BaseMvpActivity<LoginContract.ILoginPresenter>(),
-    LoginContract.ILoginView {
+    : BaseMvpActivity<LoginContract.Presenter>(),
+    LoginContract.View {
+
+
+    private lateinit var mEtUsername: EditText
+    private lateinit var mEtPassword: EditText
 
     companion object {
         fun start(context: Context) {
@@ -27,12 +32,9 @@ class LoginActivity
         }
     }
 
-    override fun initPresenter(): LoginContract.ILoginPresenter {
-        return LoginPresenter(this)
+    override fun initPresenter(): LoginContract.Presenter {
+        return LoginPresenterPresenter(this)
     }
-
-    lateinit var mEtUsername: EditText
-    lateinit var mEtPassword: EditText
 
     override fun getLayout() = R.layout.activity_login
 
@@ -65,5 +67,9 @@ class LoginActivity
     override fun clearInput() {
         mEtPassword.setText("")
         mEtUsername.setText("")
+    }
+
+    override fun gotoMain() {
+        startActivity(MainActivity::class.java)
     }
 }

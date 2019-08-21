@@ -2,9 +2,8 @@ package red.djh.wanandroid.base
 
 import android.annotation.SuppressLint
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
-import red.djh.wanandroid.mvp.BaseView
 
 /**
  * red.djh.wanandroid.base
@@ -27,5 +26,10 @@ abstract class BaseActivity : Activity() {
 
     override fun onStart() {
         super.onStart()
+    }
+
+    protected fun startActivity(clazz: Class<*>) {
+        val intent = Intent(this, clazz)
+        startActivity(intent)
     }
 }
