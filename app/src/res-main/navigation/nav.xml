@@ -13,6 +13,9 @@
         <action
                 android:id="@+id/action_fragment_main_to_fragment_article"
                 app:destination="@id/fragment_article"/>
+        <action
+                android:id="@+id/action_fragment_main_to_fragment_login"
+                app:destination="@id/fragment_login"/>
     </fragment>
 
     <fragment
@@ -20,5 +23,15 @@
             android:name="red.djh.wanandroid.HomeFragment"
             android:label="fragment_b"
             tools:layout="@layout/fragment_home" />
+
+    <fragment
+            android:id="@+id/fragment_login"
+            android:name="red.djh.wanandroid.LoginFragment"
+            android:label="fragment_b"
+            tools:layout="@layout/fragment_login" >
+        <action
+                android:id="@+id/action_fragment_login_to_fragment_main"
+                app:destination="@id/fragment_main"/>
+    </fragment>
 
 </navigation>
